@@ -71,8 +71,8 @@ public class GameOfLifeTest
          */
         
         GameOfLife game = new GameOfLife();
-        final int ROWS = game.getNumRows();
-        final int COLS = game.getNumCols();
+        final int ROWS = 21;
+        final int COLS = 21;
 
         for(int row = 0; row < ROWS; row++)
         {
