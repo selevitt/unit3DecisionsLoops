@@ -103,7 +103,7 @@ public class GameOfLife
         final int COLS = 21;
         
         Grid<Actor> grid = world.getGrid();
-        
+        BoundedGrid<Actor> newGrid = new BoundedGrid<Actor>(ROWS, COLS);
         
         for(int index = 0; index <= ROWS; index++)
         {
@@ -111,16 +111,23 @@ public class GameOfLife
             {
                 Location locgrid = new Location(index, i);
                 ArrayList list = grid.getOccupiedAdjacentLocations(locgrid);
-                Rock newRcok = new Rock();
+                Rock newRock = new Rock();
                 
                 if(getActor(index, i) != null)
                     {
                       if(list.size() >= 2 && list.size() <= 3)
                       {
-                          locgrid.put(cell, newRock);
+                          newGrid.put(locgrid, newRock);
                       }
                       
                      }
+                else
+                {
+                    if(list.size() == 3)
+                    {
+                        newGrid.put();
+                    }
+                }
             }
         }
         
