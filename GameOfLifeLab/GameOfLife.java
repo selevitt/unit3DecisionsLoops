@@ -180,7 +180,7 @@ public class GameOfLife
         
         for( int i = 0; i< 10; i++)
         {   
-            Thread.sleep(10);
+            Thread.sleep(100);
             game.createNextGeneration();
         }
     }
